@@ -1,41 +1,33 @@
+
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Contact Form</title>
+        <title>Contact Form</title>
+
+
 </head>
 <body>
-    <form id="contactForm">
+    <form action="https://formsubmit.co/krishhsdesai@gmail.com" method="POST">
+
+
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Email!">
         <input type="email" name="email" placeholder="Email Address" required>
-        <input type="text" name="name" placeholder="Write your message here:" required>
+        <input type="hidden" name = "_next" value="thankyou.html">
+        <input type="text" name="name" placeholder="write your msg here: " required>
         <button type="submit">Send</button>
+
+
     </form>
 
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
 
-            const form = event.target;
-            const data = new FormData(form);
-            const action = "https://formsubmit.co/krishhsdesai@gmail.com";
 
-            fetch(action, {
-                method: 'POST',
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    window.location.href = 'thankyou.html';
-                } else {
-                    alert('Error submitting the form. Please try again.');
-                }
-            }).catch(error => {
-                alert('Error submitting the form. Please try again.');
-            });
-        });
-    </script>
+
 </body>
+
+
+
+
 </html>
